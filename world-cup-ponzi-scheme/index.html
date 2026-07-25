@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Cup 2026 Ponzi Scheme — Final Results</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #080d1a;
+            --bg-card: #0f1626;
+            --bg-card-alt: #111c30;
+            --border: #1e2d46;
+            --border-light: #162035;
+            --text: #f0f4ff;
+            --text-secondary: #9aaac4;
+            --muted: #5a6a88;
+            --gold: #f5c518;
+            --gold-dim: #b8960e;
+            --silver: #c0c0c0;
+            --bronze: #cd7f32;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 20px;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 580px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 0 0 28px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 4px;
+        }
+        .hero-icon { font-size: 3rem; margin-bottom: 16px; display: block; }
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 52px;
+            letter-spacing: 3px;
+            color: var(--text);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .hero-sub {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+        .hero-tagline {
+            margin-top: 14px;
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* RESULTS CARD */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 12px 18px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .result-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 18px;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .result-row:last-child { border-bottom: none; }
+
+        .place {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 22px;
+            width: 32px;
+            flex-shrink: 0;
+            text-align: center;
+        }
+        .place.gold   { color: var(--gold); }
+        .place.silver { color: var(--silver); }
+        .place.bronze { color: var(--bronze); }
+        .place.last   { color: var(--muted); font-size: 16px; }
+
+        .result-info { flex: 1; min-width: 0; }
+        .team-name {
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .sweeper {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .score {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            font-variant-numeric: tabular-nums;
+            text-align: right;
+            flex-shrink: 0;
+        }
+        .score.gold   { color: var(--gold); }
+        .score.silver { color: var(--silver); }
+        .score.bronze { color: var(--bronze); }
+        .score.last   { color: var(--muted); }
+        .score-label {
+            font-size: 9px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--muted);
+            text-align: right;
+            margin-top: 1px;
+        }
+
+        /* WINNING PICKS */
+        .picks-group-label {
+            padding: 12px 18px 0;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .pick-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 18px;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 13px;
+        }
+        .pick-row:last-child { border-bottom: none; }
+        .pick-tier {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--muted);
+            width: 22px;
+            flex-shrink: 0;
+        }
+        .pick-flag { font-size: 1rem; flex-shrink: 0; }
+        .pick-name { flex: 1; color: var(--text); font-weight: 500; }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 28px 18px;
+            border-top: 1px solid var(--border);
+            margin-top: 4px;
+        }
+        .cta p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .cta a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .cta a:hover { color: var(--gold-dim); }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 38px; }
+            body { padding: 32px 16px; }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+
+    <div class="hero">
+        <h1>That&rsquo;s a wrap</h1>
+        <div class="hero-sub">FIFA World Cup 2026 &middot; Ponzi Scheme</div>
+        <p class="hero-tagline">See you next time.</p>
+    </div>
+
+    <!-- FINAL STANDINGS -->
+    <div class="card">
+        <div class="card-header">Final Standings</div>
+
+        <div class="result-row">
+            <div class="place gold">1</div>
+            <div class="result-info">
+                <div class="team-name">Owen&rsquo;s sleep paralysis demon</div>
+                <div class="sweeper">Ricky</div>
+            </div>
+            <div>
+                <div class="score gold">110.5</div>
+                <div class="score-label">pts</div>
+            </div>
+        </div>
+
+        <div class="result-row">
+            <div class="place silver">2</div>
+            <div class="result-info">
+                <div class="team-name">Imaginary Betis</div>
+                <div class="sweeper">Mark</div>
+            </div>
+            <div>
+                <div class="score silver">110</div>
+                <div class="score-label">pts</div>
+            </div>
+        </div>
+
+        <div class="result-row">
+            <div class="place bronze">3</div>
+            <div class="result-info">
+                <div class="team-name">Megshan.wins</div>
+                <div class="sweeper">Meg</div>
+            </div>
+            <div>
+                <div class="score bronze">107.5</div>
+                <div class="score-label">pts</div>
+            </div>
+        </div>
+
+        <div class="result-row">
+            <div class="place last">138</div>
+            <div class="result-info">
+                <div class="team-name" style="color: var(--text-secondary);">Nothing lasts 90 minutes</div>
+                <div class="sweeper">Aoife</div>
+            </div>
+            <div>
+                <div class="score last">22.5</div>
+                <div class="score-label">pts</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+        <p>Interested in a custom tournament site for your group?<br>Reach out to <a href="mailto:alex@carrotconsulting.ca">alex@carrotconsulting.ca</a> to discuss.</p>
+    </div>
+
+</div>
+</body>
+</html>
